@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WWE Universe Tracker</title>
+<meta name="description" content="Campeones, rivalidades, carteleras y crónica del universo de WWE 2K26.">
+<meta name="theme-color" content="#0a0b0f">
+<!-- Para instalarla como app (iPhone y Android) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="WWE Universe">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+  html, body { margin: 0; height: 100%; background: #0a0b0f; overflow: hidden; }
+  body { font: 500 14px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #c9ccd6; }
+  #app { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .4s ease; background: #0a0b0f; }
+  #app.lista { opacity: 1; }
+  #carga { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 24px; }
+  #carga img { width: 112px; height: 112px; border-radius: 26px; animation: pulso 1.6s ease-in-out infinite; }
+  @keyframes pulso { 50% { transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(230, 30, 50, .55)); } }
+  #carga b { color: #fff; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
+  #ayuda { display: none; max-width: 300px; }
+  #ayuda a { display: inline-block; margin-top: 10px; color: #fff; background: #d6202f; padding: 10px 16px; text-decoration: none; font-weight: 600; }
+  @media (prefers-reduced-motion: reduce) { #carga img { animation: none; } }
+</style>
+</head>
+<body>
+<div id="carga">
+  <img src="icon-512.png" alt="">
+  <b>WWE Universe Tracker</b>
+  <div id="ayuda">¿Tarda demasiado?<br><a id="directo" href="#">Ábrela directo</a></div>
+</div>
+<iframe id="app" title="WWE Universe Tracker" allow="fullscreen"></iframe>
+<script>
+  // Dirección de la web de Apps Script (la implementación de siempre; si algún día cambia, solo se cambia aquí)
+  var WEB = 'https://script.google.com/macros/s/AKfycbwJlWB66Jm6GextzNYlNFsRhqLUTA6grcEHvwDpYg3LWw66ZK8z1bm01_juU81RpeC5Zw/exec';
+  var app = document.getElementById('app');
+  document.getElementById('directo').href = WEB;
+  app.onload = function () { app.classList.add('lista'); };
+  setTimeout(function () { document.getElementById('ayuda').style.display = 'block'; }, 12000);
+  app.src = WEB;
+</script>
+</body>
+</html>

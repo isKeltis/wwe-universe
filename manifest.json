@@ -1,0 +1,15 @@
+{
+  "name": "WWE Universe Tracker",
+  "short_name": "WWE Universe",
+  "description": "Campeones, rivalidades, carteleras y crónica del universo de WWE 2K26.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0b0f",
+  "theme_color": "#0a0b0f",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
